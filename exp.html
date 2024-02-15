@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .active {
+        text-align: center;
+        color: white;
+        border-radius: 7px;
+        position: absolute;
+        right: 0px; /* Start position */
+        top: 3rem;
+        padding: 1rem;
+        background-color: green;
+        animation: slideRightToLeft 0.5s forwards; /* Animation */
+      }
+
+      @keyframes slideRightToLeft {
+        0% {
+          right: 0px; /* Start position */
+        }
+        100% {
+          right: 2rem; /* End position */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="fun()">Button</button>
+    <script>
+      function fun() {
+
+        let p = document.createElement("p");
+        p.innerHTML = "Employee Added";
+        p.classList.add("active");
+        let body = document.getElementsByTagName("body")[0];
+        body.appendChild(p);
+        setTimeout(function () {
+          p.remove();
+        }, 1000);
+      }
+    </script>
+  </body>
+</html>
